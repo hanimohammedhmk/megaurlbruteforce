@@ -55,9 +55,10 @@ def main():
         foundedurls.write(url2)
         foundedurls.write('\n')
         foundedurls.close()
-     connection.close()  
-   except urllib.request.HTTPError as e:
-     print(e.getcode())
+     connection.close() 
+   #except urllib.request.HTTPError or urllib.error.URLError as e:
+   except urllib.error.URLError as e:
+     print(e.reason)
     
 
 if __name__ == '__main__':
