@@ -61,7 +61,7 @@ def megabrute():
                             foundedurls1.write(title)
                             foundedurls1.write('\n')
                         foundedurls1.close()
-                        connection1.close()
+                        connection.close()
                             #except urllib.request.HTTPError or urllib.error.URLError as e:
                     except urllib.error.URLError as e:
                             print(e.reason)
