@@ -55,10 +55,16 @@ def megabrute():
                             n=n+1
                             print(statuscode, '-- got ', n ,' urls')
                             soup = BeautifulSoup(connection,"lxml")
-                            title = soup.title.string
+
                             foundedurls1 = open('output.txt','a')
                             foundedurls1.write(url2)
-                            foundedurls1.write(title)
+                            foundedurls1.write(" ")
+                            try :
+                                title = soup.title.string
+                                foundedurls1.write(title)
+                            except :
+                                title = 'NonType- AttributeError'
+                                foundedurls1.write(title)
                             foundedurls1.write('\n')
                         foundedurls1.close()
                         connection.close()
@@ -108,7 +114,14 @@ def megabrute():
                                 title = soup.title.string
                                 foundedurls = open('output.txt','a')
                                 foundedurls.write(url2)
-                                foundedurls.write(title)
+                                foundedurls.write(" ")
+                                try :
+                                    title = soup.title.string
+                                    foundedurls.write(title)
+                                except :
+                                    title = 'NonType- AttributeError'
+                                    foundedurls.write(title)
+
                                 foundedurls.write('\n')
                             foundedurls.close()
                             connection.close()
