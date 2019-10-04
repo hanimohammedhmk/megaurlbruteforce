@@ -54,14 +54,14 @@ def megabrute():
                         if(statuscode == 200 or 301 or 300):
                             n=n+1
                             print(statuscode, '-- got ', n ,' urls')
-                            soup = BeautifulSoup(urllib.request.urlopen(url2),"lxml")
+                            soup = BeautifulSoup(connection,"lxml")
                             title = soup.title.string
-                            foundedurls = open('output.txt','a')
-                            foundedurls.write(url2)
-                            foundedurls.write(title)
-                            foundedurls.write('\n')
-                            foundedurls.close()
-                            connection.close()
+                            foundedurls1 = open('output.txt','a')
+                            foundedurls1.write(url2)
+                            foundedurls1.write(title)
+                            foundedurls1.write('\n')
+                        foundedurls1.close()
+                        connection1.close()
                             #except urllib.request.HTTPError or urllib.error.URLError as e:
                     except urllib.error.URLError as e:
                             print(e.reason)
@@ -104,14 +104,14 @@ def megabrute():
                             if(statuscode == 200 or 301 or 300):
                                 n=n+1
                                 print(statuscode, '-- got ', n ,' urls')
-                                soup = BeautifulSoup(urllib.request.urlopen(url2),"lxml")
+                                soup = BeautifulSoup(connection,"lxml")
                                 title = soup.title.string
                                 foundedurls = open('output.txt','a')
                                 foundedurls.write(url2)
                                 foundedurls.write(title)
                                 foundedurls.write('\n')
-                                foundedurls.close()
-                                connection.close()
+                            foundedurls.close()
+                            connection.close()
                                 #except urllib.request.HTTPError or urllib.error.URLError as e:
                         except urllib.error.URLError as e:
                             print(e.reason)
